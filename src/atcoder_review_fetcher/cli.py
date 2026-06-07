@@ -8,6 +8,7 @@
 from __future__ import annotations
 
 import argparse
+import dataclasses
 import logging
 import sys
 from datetime import datetime, timedelta, timezone
@@ -47,6 +48,17 @@ def build_parser() -> argparse.ArgumentParser:
         "--no-git",
         action="store_true",
         help="git commit/push を行わない",
+    )
+    parser.add_argument(
+        "--no-push",
+        action="store_true",
+        help="commit はするが push しない（push 権限のない環境用）",
+    )
+    parser.add_argument(
+        "--practice-repo",
+        type=Path,
+        default=None,
+        help="config の practice_repo を上書きする（マウントパスが異なる環境用）",
     )
     return parser
 
@@ -138,6 +150,8 @@ def main(argv: list[str] | None = None) -> int:
     except (OSError, ValueError) as exc:
         logger.error("設定の読み込みに失敗: %s", exc)
         return 1
+    if args.practice_repo is not None:
+        config = dataclasses.replace(config, practice_repo=args.practice_repo)
 
     client = AtCoderClient(interval_sec=config.request_interval_sec)
 
@@ -170,7 +184,7 @@ def main(argv: list[str] | None = None) -> int:
             gitops.commit_and_push(
                 config.practice_repo,
                 contest_id,
-                push=config.git_push,
+                push=config.git_push and not args.no_push,
                 remote=config.git_remote,
                 branch=config.git_branch,
             )
