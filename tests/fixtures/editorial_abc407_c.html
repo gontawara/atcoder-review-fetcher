@@ -1,0 +1,395 @@
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Editorial - AtCoder Beginner Contest 407</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta http-equiv="Content-Language" content="en">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="google-site-verification" content="nXGC_JxO0yoP1qBzMnYD_xgufO6leSLw1kyNo2HZltM" />
+
+	
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-RC512FD18N"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('set', 'user_properties', {
+			
+				'login_status': 'logged_out',
+			
+		});
+		gtag('config', 'G-RC512FD18N');
+	</script>
+
+	
+	<meta name="description" content="AtCoder is a programming contest site for anyone from beginners to experts. We hold weekly programming contests online.">
+	<meta name="author" content="AtCoder Inc.">
+
+	<meta property="og:site_name" content="AtCoder">
+	
+	<meta property="og:title" content="Editorial - AtCoder Beginner Contest 407" />
+	<meta property="og:description" content="AtCoder is a programming contest site for anyone from beginners to experts. We hold weekly programming contests online." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://atcoder.jp/contests/abc407/editorial/13105" />
+	<meta property="og:image" content="https://img.atcoder.jp/assets/atcoder.png" />
+	<meta name="twitter:card" content="summary" />
+	<meta name="twitter:site" content="@atcoder" />
+	
+	<meta property="twitter:title" content="Editorial - AtCoder Beginner Contest 407" />
+
+	<link href="//fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f99ad5a/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="//img.atcoder.jp/public/f99ad5a/css/base.css">
+	<link rel="shortcut icon" type="image/png" href="//img.atcoder.jp/assets/favicon.png">
+	<link rel="apple-touch-icon" href="//img.atcoder.jp/assets/atcoder.png">
+	<script src="//img.atcoder.jp/public/f99ad5a/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="//img.atcoder.jp/public/f99ad5a/js/lib/bootstrap.min.js"></script>
+	<script src="//img.atcoder.jp/public/f99ad5a/js/cdn/js.cookie.min.js"></script>
+	<script src="//img.atcoder.jp/public/f99ad5a/js/cdn/moment.min.js"></script>
+	<script src="//img.atcoder.jp/public/f99ad5a/js/cdn/moment_js-ja.js"></script>
+	<script>
+		var LANG = "en";
+		var userScreenName = "";
+		var csrfToken = "fe8iA7uil59/sk0ma+k6n3OShg+nNJbenKT9/l4IjAs="
+	</script>
+	<script src="//img.atcoder.jp/public/f99ad5a/js/utils.js"></script>
+	
+	
+		<script src="//img.atcoder.jp/public/f99ad5a/js/contest.js"></script>
+		<link href="//img.atcoder.jp/public/f99ad5a/css/contest.css" rel="stylesheet" />
+		<script>
+			var contestScreenName = "abc407";
+			var remainingText = "Remaining Time";
+			var countDownText = "Contest begins in";
+			var startTime = moment("2025-05-24T21:00:00+09:00");
+			var endTime = moment("2025-05-24T22:40:00+09:00");
+		</script>
+		<style></style>
+	
+	
+	
+	
+		<script src="//img.atcoder.jp/public/f99ad5a/js/cdn/run_prettify.js"></script>
+	
+	
+		<link rel="stylesheet" href="//img.atcoder.jp/public/f99ad5a/css/cdn/katex.min.css">
+		<script defer src="//img.atcoder.jp/public/f99ad5a/js/cdn/katex.min.js"></script>
+		<script defer src="//img.atcoder.jp/public/f99ad5a/js/cdn/auto-render.min.js"></script>
+		
+		<script>
+			var katexOptions = {
+				delimiters: [
+					{left: "$$", right: "$$", display: true},
+					{left: "$", right: "$", display: false},
+					{left: "\\(", right: "\\)", display: false},
+					{left: "\\[", right: "\\]", display: true}
+				],
+      	ignoredTags: ["script", "noscript", "style", "textarea", "code", "option"],
+				ignoredClasses: ["prettyprint", "source-code-for-copy"],
+				throwOnError: false
+			};
+			document.addEventListener("DOMContentLoaded", function() { renderMathInElement(document.body, katexOptions);});
+		</script>
+	
+	
+		<script src="//img.atcoder.jp/public/f99ad5a/js/lib/marked.js"></script>
+		<script src="//img.atcoder.jp/public/f99ad5a/js/cdn/jquery.timeago.min.js"></script>
+		
+		<script src="//img.atcoder.jp/public/f99ad5a/js/blog.js"></script>
+	
+	
+	
+	
+	
+	
+	
+	
+	<script src="//img.atcoder.jp/public/f99ad5a/js/base.js"></script>
+</head>
+
+<body>
+
+<div id="modal-contest-start" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Contest started</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Beginner Contest 407 has begun.</p>
+			</div>
+			<div class="modal-footer">
+				
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				
+			</div>
+		</div>
+	</div>
+</div>
+<div id="modal-contest-end" class="modal fade" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Contest is over</h4>
+			</div>
+			<div class="modal-body">
+				<p>AtCoder Beginner Contest 407 has ended.</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="main-div" class="float-container">
+
+
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+					<span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="/home"></a>
+			</div>
+			<div class="collapse navbar-collapse" id="navbar-collapse">
+				<ul class="nav navbar-nav">
+				
+					<li><a class="contest-title" href="/contests/abc407">AtCoder Beginner Contest 407</a></li>
+				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							<img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English <span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="/contests/abc407/editorial/13105?lang=ja"><img src='//img.atcoder.jp/assets/top/img/flag-lang/ja.png'> 日本語</a></li>
+							<li><a href="/contests/abc407/editorial/13105?lang=en"><img src='//img.atcoder.jp/assets/top/img/flag-lang/en.png'> English</a></li>
+						</ul>
+					</li>
+					
+					
+						<li><a href="/register?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fabc407%2Feditorial%2F13105">Sign Up</a></li>
+						<li><a href="/login?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fabc407%2Feditorial%2F13105">Sign In</a></li>
+					
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<form method="POST" name="form_logout" action="/logout?continue=https%3A%2F%2Fatcoder.jp%2Fcontests%2Fabc407%2Feditorial%2F13105">
+		<input type="hidden" name="csrf_token" value="fe8iA7uil59/sk0ma&#43;k6n3OShg&#43;nNJbenKT9/l4IjAs=" />
+	</form>
+	<div id="main-container" class="container"
+		 	style="padding-top:50px;">
+		
+
+
+<div class="row">
+	<div id="contest-nav-tabs" class="col-sm-12 mb-2 cnvtb-fixed">
+	<div>
+		<small class="contest-duration">
+			
+				Contest Duration:
+				<a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250524T2100&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-05-24 21:00:00+0900</time></a> - <a href='http://www.timeanddate.com/worldclock/fixedtime.html?iso=20250524T2240&p1=248' target='blank'><time class='fixtime fixtime-full'>2025-05-24 22:40:00+0900</time></a> (local time)
+				(100 minutes)
+			
+		</small>
+		<small class="back-to-home pull-right"><a href="/home">Back to Home</a></small>
+	</div>
+	<ul class="nav nav-tabs">
+		<li><a href="/contests/abc407"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Top</a></li>
+		
+			<li><a href="/contests/abc407/tasks"><span class="glyphicon glyphicon-tasks" aria-hidden="true"></span> Tasks</a></li>
+		
+
+		
+			<li><a href="/contests/abc407/clarifications"><span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> Clarifications <span id="clar-badge" class="badge" ></span></a></li>
+		
+
+		
+
+		
+			<li>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list" aria-hidden="true"></span> Results<span class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="/contests/abc407/submissions"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> All Submissions</a></li>
+					
+				</ul>
+			</li>
+		
+
+		
+			
+				
+					<li><a href="/contests/abc407/standings"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> Standings</a></li>
+				
+			
+				
+					<li><a href="/contests/abc407/standings/virtual"><span class="glyphicon glyphicon-sort-by-attributes-alt" aria-hidden="true"></span> Virtual Standings</a></li>
+				
+			
+		
+
+		
+
+		
+			<li class="active"><a href="/contests/abc407/editorial"><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Editorial</a></li>
+		
+		
+			
+			
+				<li><a href="https://codeforces.com/blog/entry/143155" target="_blank" rel="noopener"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Discuss</a></li>
+			
+		
+
+		<li class="pull-right"><a id="fix-cnvtb" href="javascript:void(0)"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span></a></li>
+	</ul>
+</div>
+	<div class="col-sm-12">
+		<span class="label label-default">Official</span>
+		<h2 class="mt-1">
+			
+				<a href="/contests/abc407/tasks/abc407_c">C - Security 2</a> Editorial
+			
+			<span class="small">by <img src="//img.atcoder.jp/assets/user/user-orange-3.png" class="user-rating-stage-m"><a href="/users/sheyasutaka" class="username"><span class="user-orange">sheyasutaka</span></a></span>
+			
+		</h2>
+		
+		<hr class="mt-1">
+		
+			<div><p>以下では <span>\(S\)</span> の長さを <span>\(N\)</span> とおきます。</p>
+
+<p><span>\(t\)</span> の文字数は、ボタン A を押すと <span>\(1\)</span> 増えて、ボタン B を押すと変化しません。
+なので、ボタン A を押す回数は <span>\(N\)</span> 回とわかります。</p>
+
+<p>以下の行動の前後では <span>\(t\)</span> は変化しないので、以下の行動は行わないとしても操作回数の最小値は悪化しません。</p>
+
+<ul>
+<li>ボタン A を最初に押すよりも前に、ボタン B を押す。</li>
+<li>ボタン B を <span>\(10\)</span> 回連続で押す。</li>
+</ul>
+
+<p><span>\(1 \leq i \leq N\)</span> について、<span>\(i\)</span> 回目にボタン A を押してから次にボタン A を押すまでのあいだに何回ボタン B を押すかを <span>\(b_i\)</span> とおくと、上の議論から <span>\(0 \leq b_i \leq 9\)</span> としてよいです。</p>
+
+<p>このとき、<span>\(t\)</span> の <span>\(j\)</span> 文字目が <span>\(S_j\)</span> になるのは、<span>\((b_j + \dots + b_N) \bmod 10 = S_j\)</span> になるときです。</p>
+
+<p><span>\(j=N\)</span> のときは <span>\(b_N = S_j\)</span> となるので、<span>\(j&lt;N\)</span> のときについて考えます。
+<span>\(j+1\)</span> 文字目について同様の式を立てると <span>\((b_{j+1} + \dots + b_N) \bmod 10 = S_{j+1}\)</span> となり、さきほどの式からこの式を引くことで <span>\(b_j \equiv S_{j} - S_{j+1}\ \pmod{10}\)</span> が分かります。
+これを満たす <span>\(b_i\)</span> であって <span>\(0 \leq b_i \leq 9\)</span> の範囲にあるものは、<span>\((10 + S_{j} - S_{j+1}) \bmod 10\)</span> で求まります。</p>
+
+<p>したがって、上で求めた <span>\(b_j\)</span> の値を <span>\(1 \leq j \leq N\)</span> について足し合わせ、さらに <span>\(N\)</span> を加えた値が答えとなります。</p>
+
+<p>C++ での実装例を以下に示します。</p>
+
+<pre class="prettyprint linenums"><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;vector&gt;
+using std::cin;
+using std::cout;
+using std::cerr;
+using std::endl;
+using std::string;
+
+
+int main(void){
+	string s;
+	cin &gt;&gt; s;
+
+	int sum = 0;
+	int n = s.size();
+	for (int i = n-1; i &gt;= 0; i--) {
+		int v = s[i] - &#39;0&#39;;
+		int u = ((i &lt; n-1) ? (s[i+1] - &#39;0&#39;) : 0);
+		int b = (10 + v - u) % 10;
+		sum += b;
+	}
+
+	int ans = sum + n;
+	cout &lt;&lt; ans &lt;&lt; &#34;\n&#34;;
+
+	return 0;
+}
+</code></pre>
+</div>
+		
+		<div class="clearfix">
+			<p class="small gray pull-right">
+				posted:
+				<span class="tooltip-unix" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="1748089173">
+				<time class="timeago" datetime="2025/05/24 21:19:33"></time>
+			</span>
+				<br>
+				last update:
+				<span class="tooltip-unix" aria-hidden="true" data-toggle="tooltip" data-placement="right" title="1748094245">
+				<time class="timeago" datetime="2025/05/24 22:44:05"></time>
+			</span>
+			</p>
+		</div>
+	</div>
+</div>
+
+
+
+		
+			<hr>
+			
+			
+			
+<div class="a2a_kit a2a_kit_size_20 a2a_default_style pull-right" data-a2a-url="https://atcoder.jp/contests/abc407/editorial/13105?lang=en" data-a2a-title="Editorial - AtCoder Beginner Contest 407">
+	<a class="a2a_button_facebook"></a>
+	<a class="a2a_button_twitter"></a>
+	
+		<a class="a2a_button_telegram"></a>
+	
+	<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+</div>
+
+		
+		<script async src="//static.addtoany.com/menu/page.js"></script>
+		
+	</div> 
+	<hr>
+</div> 
+
+	<div class="container" style="margin-bottom: 80px;">
+			<footer class="footer">
+			
+				<ul>
+					<li><a href="/contests/abc407/rules">Rule</a></li>
+					<li><a href="/contests/abc407/glossary">Glossary</a></li>
+					
+				</ul>
+			
+			<ul>
+				<li><a href="/tos">Terms of service</a></li>
+				<li><a href="/privacy">Privacy Policy</a></li>
+				<li><a href="/personal">Information Protection Policy</a></li>
+				<li><a href="/company">Company</a></li>
+				<li><a href="/faq">FAQ</a></li>
+				<li><a href="/contact">Contact</a></li>
+				
+			</ul>
+			<div class="text-center">
+					<small id="copyright">Copyright Since 2012 &copy;<a href="http://atcoder.co.jp">AtCoder Inc.</a> All rights reserved.</small>
+			</div>
+			</footer>
+	</div>
+	<p id="fixed-server-timer" class="contest-timer"></p>
+	<div id="scroll-page-top" style="display:none;"><span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span> Page Top</div>
+
+</body>
+</html>
+
+

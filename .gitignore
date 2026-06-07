@@ -1,0 +1,13 @@
+# 環境固有の設定（config.example.toml を元に各自作成）
+config.toml
+
+# Python
+.venv/
+__pycache__/
+*.egg-info/
+.pytest_cache/
+pytest-cache-files-*/
+uv.lock
+
+# macOS
+.DS_Store

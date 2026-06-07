@@ -1,0 +1,29 @@
+[project]
+name = "atcoder-review-fetcher"
+version = "0.1.0"
+description = "ABC終了後に問題文・公式解説を取得し、ローカルの提出コードと合わせてgitにコミットするツール"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "requests>=2.31",
+    "beautifulsoup4>=4.12",
+    "markdownify>=0.13,<2",
+]
+
+[project.scripts]
+abc-fetch = "atcoder_review_fetcher.cli:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/atcoder_review_fetcher"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
